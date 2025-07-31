@@ -1,0 +1,22 @@
+{
+  "watch": [
+    "app/**/*",
+    "components/**/*",
+    "lib/**/*",
+    "utils/**/*",
+    "hooks/**/*",
+    "package.json",
+    "next.config.mjs",
+    "tailwind.config.ts",
+    "tsconfig.json"
+  ],
+  "ext": "js,jsx,ts,tsx,json,css",
+  "ignore": [
+    ".next/**/*",
+    "node_modules/**/*",
+    ".git/**/*",
+    "dist/**/*",
+    "build/**/*"
+  ],
+  "exec": "next dev"
+}
