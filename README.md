@@ -2,6 +2,8 @@
 
 A comprehensive and professional weather forecasting application built with modern web technologies. This application provides real-time weather data, interactive maps, detailed forecasts, and advanced meteorological insights.
 
+![Advanced Weather Station](https://github.com/user-attachments/assets/78cf801d-f05c-467b-aa16-c57f77a5e5cd)
+
 ## Features
 
 ### Core Weather Features
