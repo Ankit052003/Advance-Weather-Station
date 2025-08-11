@@ -1,0 +1,226 @@
+.weather-background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.weather-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: all 1.5s ease-in-out;
+}
+
+/* Fallback gradients when images are not available */
+.weather-background.clear-day {
+  background: linear-gradient(45deg, #87CEEB 0%, #98D8E8 30%, #F0E68C 70%, #FFD700 100%);
+}
+
+.weather-background.clear-night {
+  background: linear-gradient(45deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+}
+
+.weather-background.partly-cloudy-day {
+  background: linear-gradient(45deg, #74b9ff 0%, #0984e3 50%, #74b9ff 100%);
+}
+
+.weather-background.partly-cloudy-night {
+  background: linear-gradient(45deg, #232526 0%, #414345 100%);
+}
+
+.weather-background.cloudy {
+  background: linear-gradient(45deg, #bdc3c7 0%, #2c3e50 100%);
+}
+
+.weather-background.light-rain {
+  background: linear-gradient(45deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+.weather-background.rain {
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+}
+
+.weather-background.heavy-rain {
+  background: linear-gradient(45deg, #434343 0%, #000000 100%);
+}
+
+.weather-background.drizzle {
+  background: linear-gradient(45deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.weather-background.thunderstorm {
+  background: linear-gradient(45deg, #0c0c0c 0%, #434343 50%, #0c0c0c 100%);
+}
+
+.weather-background.snow {
+  background: linear-gradient(45deg, #e6ddd4 0%, #d3e7ee 100%);
+}
+
+.weather-background.mist {
+  background: linear-gradient(45deg, #d3cce3 0%, #e9e4f0 100%);
+}
+
+.weather-background.default {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Background overlay for text readability */
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: -1;
+  backdrop-filter: blur(1px);
+}
+
+/* Rain particles */
+.rain-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.raindrop {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Snow particles */
+.snow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.snowflake {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.8);
+  user-select: none;
+  pointer-events: none;
+  animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100px) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(20vh) translateX(50px) rotate(90deg);
+  }
+  40% {
+    transform: translateY(40vh) translateX(-50px) rotate(180deg);
+  }
+  60% {
+    transform: translateY(60vh) translateX(50px) rotate(270deg);
+  }
+  80% {
+    transform: translateY(80vh) translateX(-50px) rotate(360deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(0px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Lightning effect */
+.lightning-flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.lightning-flash.active {
+  animation: lightning 0.2s ease-out;
+}
+
+@keyframes lightning {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .weather-background {
+    background-attachment: scroll;
+  }
+  
+  .raindrop {
+    width: 1px;
+    height: 15px;
+  }
+  
+  .snowflake {
+    font-size: 12px !important;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .raindrop,
+  .snowflake,
+  .lightning-flash {
+    animation: none;
+  }
+  
+  .weather-background {
+    transition: none;
+  }
+}

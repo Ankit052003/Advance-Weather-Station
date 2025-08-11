@@ -59,7 +59,7 @@ A comprehensive and professional weather forecasting application built with mode
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/advanced-weather-station.git
+git clone https://github.com/Ankit052003/advanced-weather-station.git
 cd advanced-weather-station
 ```
 
@@ -138,13 +138,6 @@ This application integrates with various weather APIs to provide comprehensive m
 - Air quality information
 - Weather alerts and warnings
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## License
 
@@ -159,6 +152,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Author**: Your Name  
+**Author**: Ankit Kumar
 **Version**: 1.0.0  
 **Last Updated**: July 2025

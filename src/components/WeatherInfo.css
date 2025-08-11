@@ -1,0 +1,44 @@
+.weather-info-badge {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  min-width: 180px;
+}
+
+.weather-theme-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.weather-theme-indicator svg {
+  color: var(--text-secondary);
+}
+
+.weather-description {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .weather-info-badge {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 1rem auto 2rem auto;
+    max-width: 300px;
+  }
+}
